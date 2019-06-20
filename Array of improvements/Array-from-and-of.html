@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update CSS variables with JS</title>
+</head>
+
+<body>
+    <div class="people">
+        <p>Wes</p>
+        <p>Kait</p>
+        <p>Snickers</p>
+    </div>
+    <script>
+        const people = Array.from(document.querySelectorAll('.people p'));
+        
+        // const peopleArray = Array.from(people, person => {
+        //     console.log(person);
+        //     return person.textContent;
+        // });
+        
+
+        const names = people.map(person => person.textContent);
+        console.log(names);
+    </script>
+</body>
+
+</html>

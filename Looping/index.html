@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update CSS variables with JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js"></script>
+</head>
+
+<body>
+    <p>Hi um p 01</p>
+    <p>Hi um p 02</p>
+    <p>Hi um p 03</p>
+    <p>Hi um p 04</p>
+    <p>Hi um p 05</p>
+    <p>Hi um p 06</p>
+    <p>Hi um p 07</p>
+    <p>Hi um p 08</p>
+    <p>Hi um p 09</p>
+    <p>Hi um p 10</p>
+    <script>
+        // const cuts = ['a','b','c','d'];
+        // for(const [i,cut] of cuts.entries())
+        // {
+        //     console.log(`${cut} is the ${i} item`);
+        // }
+
+        function addUpNumber()
+        {
+            let total=0;
+            for(const num of arguments)
+            {
+                total+=num;
+            }
+            //console.log(total);
+        }
+        addUpNumber(1,2,3,4,5);
+
+        const name='wes bos';
+
+        for(const char of name)
+        {
+            //console.log(char);
+        }
+
+        const ps = document.querySelectorAll('p');
+
+        for(const para of ps)
+        {
+            para.addEventListener('click',function(){
+                //console.log(this.textContent);
+            });
+            //console.log(para);
+        }
+
+        //------THE FOR OF LOOP--------//
+    </script>
+</body>
+
+</html>

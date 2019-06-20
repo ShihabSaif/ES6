@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update CSS variables with JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js"></script>
+</head>
+
+<body>
+    <div class="main">
+
+    </div>
+    <script>
+
+        const dic = {
+            HTML: 'hypertext',
+            CSS: 'cascading',
+            JS: 'javascript'
+        };
+
+        function abbreviated(){
+
+        }
+
+        const first = 'wes';
+        const last = 'bos';
+
+        const sen = `my nam is ${first}, ${last} and i love to code in ${'HTML'}, ${'CSS'}, ${'JS'}`;
+
+        const body = document.querySelector('.main');
+
+        const para = document.createElement('p');
+
+        para.innerHTML = sen;
+
+        body.appendChild(para);
+        console.log(sen);
+    </script>
+</body>
+
+</html>

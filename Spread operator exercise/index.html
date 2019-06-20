@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update CSS variables with JS</title>
+    <style>
+        .spread span{
+            display:inline-block;
+            transition: transform 0.3s;
+        }
+
+        .spread span:hover {
+            transform: translateY(-20px) rotate(10deg) scale(2);
+        }
+    </style>
+    </head>
+
+<body>
+    <h2 class="jump">SPREADS!</h2>
+    <h1>Hover over to belor SPREADS meessage : </h1>
+    <div class="spread"></div>
+
+    <script>
+        const heading = document.querySelector('.jump');
+         const spans = spwrap(heading.textContent);
+         function spwrap(word){
+             return [...word].map(letter=>`<span>${letter}</span>`).join('');
+         }
+
+         const spreadLetter = document.querySelector('.spread');
+         spreadLetter.innerHTML = spans;
+
+         function convert(rate,...amounts)
+         {
+             for(const con of amounts)
+             {
+                if(con>20)
+                {
+                    console.log(rate,con);
+                }
+             }
+             
+         }
+         convert(1.54,12,23,34);
+
+         const runner = ['wes bos',2,3,4,5,6];
+         const [name,id,...other] = runner;
+         console.log(name,id,other);
+    </script>
+</body>
+
+</html>

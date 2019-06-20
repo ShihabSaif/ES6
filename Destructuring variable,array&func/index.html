@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update CSS variables with JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js"></script>
+</head>
+
+<body>
+    <script>
+        const person = {
+            first: 'wes',
+            last: 'bos',
+            country: 'BD',
+            city: 'Dhaka',
+            twitter: 'ab'
+        };
+
+        //(1) destructuring object
+        const { first, last } = person;   
+        const wes = {
+            first: 'wes',
+            last: 'bos',
+            links: {
+                social: {
+                    facebook: 'fb.com',
+                    google: 'google.com',
+                }
+            },
+            web: {
+                blog: 'blog.com'
+            }
+        };
+
+        //(2) variable rename
+        const { facebook:fb, google:gl } = wes.links.social;  //destructuring object with nested data
+
+        //(3) array destructuring
+        const data= 'md,shihab,23,1996';
+
+        //(4) split the string,returns as an array
+        //and immediately destructure
+        const [firstname,lastName,age,dob] = data.split(','); 
+        //console.log(firstname,lastName,age,dob);
+
+        //(5) pick rest of the values all together by array destructuion
+        const team=['wes','bos','a','b','c'];
+        const [cap,vc,...players] = team;
+
+        //(6) swapping variables with destructuring
+        let inRing='in';
+        let outRing = 'out';
+
+        [inRing,outRing]=[outRing,inRing];
+
+        //(7) destructuring functions
+        function convert(amount){
+            const currency={
+                USD: amount*0.76,
+                GPB: amount*0.53,
+                AUD: amount*1.01,
+                MEX: amount*13.80
+            }
+
+            return currency;
+        }
+
+        const {USD,GPB,AUD,MEX} = convert(100);
+
+        
+    </script>
+</body>
+
+</html>
